@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Update blocklist.txt
 
 # Controls when the workflow will run
 on:
@@ -30,6 +30,8 @@ jobs:
           ./genIPS.sh
       - name: Verified commit
         uses: swinton/commit@v2.0.0
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with: 
           files: blocklist.txt
           commit-message: "Update on $(date +'%Y-%m-%d')"
