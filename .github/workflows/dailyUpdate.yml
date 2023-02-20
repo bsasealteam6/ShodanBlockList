@@ -31,7 +31,7 @@ jobs:
       - name: Verified commit
         uses: swinton/commit@v2.0.0
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         with: 
           files: blocklist.txt
           commit-message: "Update on $(date +'%Y-%m-%d')"
